@@ -12,5 +12,5 @@ raboute:	:rejoin
 
 
 ; some testing:
-pour i 1 5 1 [ecrit raboute ["Voilà la boucle #: " i]]
+pour i 1 5 1 [ecrit raboute ["Voilà la boucle numro: " i]]
 

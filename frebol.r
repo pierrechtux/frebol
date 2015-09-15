@@ -12,12 +12,13 @@ rebol [
 
 ; french word   ;Rebol word
 ; mot français  ;mot Rebol      ;testé
-écrit:          :print          ;oc
-écri:           :prin           ;oc
+affiche:        :print          ;oc		=> avant: écrit	=> mis "affiche", plutôt, écrit viendra en traduction de write.
+affich:         :prin           ;oc		=> avant: écri
+demande:        :input
 boucle:         :loop           ;oc
 pour:           :for            ;oc
-raboute:        :join           ;oc
-reduit_raboute: :rejoin         ;oc
+joint:          :join             ;oc		=> avant: raboute; mais joint sera probablement plus explicite; surtout pour le suivant, rejoint
+rejoint:        :rejoin         ;oc		=> avant: reduit_raboute; rejoint sera certainement plus explicite
 moule:          :mold           ;oc
 sonde:          :probe          ;oc
 reduit:         :reduce         ;oc
@@ -51,32 +52,37 @@ envoyer:        :send
 lire:           :read
 
 pourchaque:     :foreach
+tantque:        :while
+tous:           :all
+
+fait:           :do
 
 vers-argent:    :to-money
 sépare:         :parse			; discutable
 alerter:        :alert
 
 
+comment [
 ; quelques tests          some testing:
 print "Les mots équivalents Frebol chargés: essais:"
 print "Frebol equivalent words loaded; tests:"
-pour i 1 5 1 [écrit reduit_raboute ["Voilà la boucle numéro: " i]]
-écri "Et maintenant..."
-pour i 1 5 1 [écri  reduit_raboute [" et voilà la boucle sur une seule ligne: " i]]
-écrit ""
-boucle 4 [écrit "Boucle"]
+pour i 1 5 1 [affiche rejoint ["Voilà la boucle numéro: " i]]
+affich "Et maintenant..."
+pour i 1 5 1 [affich  rejoint [" et voilà la boucle sur une seule ligne: " i]]
+affiche ""
+boucle 4 [affiche "Boucle"]
 nom: "Personne"
 prénom: "Paul"
-écrit raboute prénom nom
+affiche joint prénom nom
 noms: ["Gérard Lambin" "Henry IV" "LaBielle de Cadix"]
-écrit moule noms
-écrit noms
-ajoute noms raboute prénom nom
+affiche moule noms
+affiche noms
+ajoute noms joint prénom nom
 ajoute noms 'nom
-écrit reduit noms
-écrit noms
-écrit formate noms
-écrit sonde noms
+affiche reduit noms
+affiche noms
+affiche formate noms
+affiche sonde noms
 noms: suivant noms
-écrit premier noms
-
+affiche premier noms
+]

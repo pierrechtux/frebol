@@ -1,24 +1,29 @@
 #!/usr/bin/rebol -qs
 rebol [
-"L'idée fondatrice est de permettre à des non-anglophones, par exemple des enfants de pays non anglophones, d'avoir accès à un langage de programmation et de se forger la logique de développement. Une fois initiés aux joies de la programmation, ces gens devront plutôt continuer à coder dans un langage conforme aux us et coutumes de notre époque, c'est-à-dire un langage dont les mot-clés sont en anglais."
-"Rebol et Red sont des langages de programmation idéaux pour ce type d'exercice, de par l'absence de mot-clés et l'utilisation de mots simples, qui peuvent aisément être définis ou redéfinis."
-"Ce programme est de ce fait simplissime: il s'agit simplement de définir des mots français de manière à ce que leur interprétation par Rebol (ou Red) amène à l'interprétation du mot équivalent en Rebol (ou Red)."
-"The initial idea is to allow people who are not English-speakers, i.e. children in non English-speaking countries, to develop using a programming language in their own native language, so that they can build themselves the logic of development.  Once initiated to the joys of programming, these people should rather continue to code using a programming language more standard, that is with English keywords."
-"Rebol and Red are ideal language for these kind of mappings, since there are no keywords, but simple words, which can very simply be remapped."
-"Hence, this program is simplistic: it simply defines some French words so that when they are used by Rebol, their Rebol equivalent is used."
+{L'idée fondatrice est de permettre à des non-anglophones, par exemple des enfants de pays non anglophones, d'avoir accès à un langage de programmation et de se forger la logique de développement. Une fois initiés aux joies de la programmation, ces gens devront plutôt continuer à coder dans un langage conforme aux us et coutumes de notre époque, c'est-à-dire un langage dont les mot-clés sont en anglais.
+Rebol et Red sont des langages de programmation idéaux pour ce type d'exercice, de par l'absence de mot-clés et l'utilisation de mots simples, qui peuvent aisément être définis ou redéfinis.
+Ce programme est de ce fait simplissime: il s'agit simplement de définir des mots français de manière à ce que leur interprétation par Rebol (ou Red) amène à l'interprétation du mot équivalent en Rebol (ou Red).
+
+The initial idea is to allow people who are not English-speakers, i.e. children in non English-speaking countries, to develop using a programming language in their own native language, so that they can build themselves the logic of development.  Once initiated to the joys of programming, these people should rather continue to code using a programming language more standard, that is with English keywords.
+Rebol and Red are ideal language for these kind of mappings, since there are no keywords, but simple words, which can very simply be remapped.
+Hence, this program is simplistic: it just defines some French words, so that when they are evaluated used by Rebol, their Rebol equivalent is used.
+}
 ]
+
 ; definition of words:
 ; définition des mots:
 
 ; french word   ;Rebol word
 ; mot français  ;mot Rebol      ;testé
-affiche:        :print          ;oc		=> avant: écrit	=> mis "affiche", plutôt, écrit viendra en traduction de write.
-affich:         :prin           ;oc		=> avant: écri
+                                ; (oc signifie oui en langue d'oc; et c'est proche de "au quai", mais pmlus court)
+
+affiche:        :print          ;oc     => avant: écrit  => mis "affiche", plutôt, écrit viendra en traduction de write.
+affich:         :prin           ;oc     => avant: écri
 demande:        :input
 boucle:         :loop           ;oc
 pour:           :for            ;oc
-joint:          :join             ;oc		=> avant: raboute; mais joint sera probablement plus explicite; surtout pour le suivant, rejoint
-rejoint:        :rejoin         ;oc		=> avant: reduit_raboute; rejoint sera certainement plus explicite
+joint:          :join           ;oc     => avant: raboute; mais joint sera probablement plus explicite; surtout pour le suivant, rejoint
+rejoint:        :rejoin         ;oc     => avant: reduit_raboute; rejoint sera certainement plus explicite
 moule:          :mold           ;oc
 sonde:          :probe          ;oc
 reduit:         :reduce         ;oc
@@ -35,17 +40,17 @@ renverse:       :reverse
 trie:           :sort
 ;trie/envers:   :sort/reverse   ; ne fonctionne pas avec les raffinements TODO il faut faire une fonction enveloppe "trie", qui reprenne les raffinements et options de sort<
 copie:          :copy
-picore:         :pick			; discutable... ramasse? choisis? va-chercher? pique? hmm. TODO choisir un mot adéquat
+picore:         :pick           ; discutable... ramasse? choisis? va-chercher? pique? hmm. TODO choisir un mot adéquat
 trouve:         :find
 selectionne:    :select
-a:              :at             ; curieux: do [ é: :at ] fonctionne, mais pas do [ à: :at ] => donc 'a au lieu de 'à TODO les soucis de non-ascii devraient se résoudre d'eux-mêmes dans Red; voir dans Rebol3
+a:              :at             ; curieux: do [ é: :at ] fonctionne, mais pas do [ à: :at ] => donc 'a au lieu de 'à TODO les soucis de non-ascii devraient se résoudre d'eux-mêmes dans Red; voire dans Rebol3
 saute:          :skip
 extrait:        :extract
 
 voir:           :view
-page:           :layout			; discutable: arrangement? mise-en-page? écran?
+page:           :layout         ; discutable: arrangement? mise-en-page? écran?
 
-;bouton:         :button		; mince, ça ne marche pas: le dialecte VID devrait se traduire d'une autre manière
+;bouton:         :button        ; mince, ça ne marche pas: le dialecte VID devrait se traduire d'une autre manière
 ;btn:            :btn
 
 envoyer:        :send
@@ -58,7 +63,7 @@ tous:           :all
 fait:           :do
 
 vers-argent:    :to-money
-sépare:         :parse			; discutable
+sépare:         :parse          ; discutable
 alerter:        :alert
 
 
